@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Painel</title>
+    <link href="~/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/CSS/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="~/CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/CSS/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="~/CSS/tether-theme-arrows-dark.min.css" rel="stylesheet" />
+    <link href="~/CSS/tether-theme-arrows.min.css" rel="stylesheet" />
+    <link href="~/CSS/tether-theme-basic.min.css" rel="stylesheet" />
+    <link href="~/CSS/tether.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<div class="panel panel-primary col-md-6">
+
+    <div class=panel-heading>
+        <h3 class=panel-title>Mensagens</h3>
+    </div>
+    <div class=panel-body>
+        <div class="panel col-md-12">
+            <div class="panel panel-success">
+                <div class="table-responsive">
+                    <table id="messages" class="table table-hover" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>
+                                Fila
+                            </th>
+                            <th>
+                                CNPJ
+                            </th>
+                            <th>
+                                Mensagens
+                            </th>
+                        </tr>
+                        </thead>
+                        @for (int i = 0; i < ViewBag.json.Count; i++)
+                        {
+                            <tr>
+
+                                <td>@ViewBag.json[i].Fila</td>
+                                <td>@ViewBag.json[i].CNPJ</td>
+                                <td>@ViewBag.json[i].Msg</td>
+
+                            </tr>
+                        }
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="panel panel-primary col-md-6">
+        <div class=panel-heading>
+            <h3 class=panel-title>Totais de Mensagens</h3>
+        </div>
+        <div class=panel-body>
+            <label>CNPJ com mais de 2000 mensagens: </label> @ViewBag.cnpjA						<br />
+            <label>CNPJ com mais de 1000 e menos de 2000 mensagens: </label> @ViewBag.cnpjB     <br />
+            <label>CNPJ com menos de 1000 mensagens: </label> @ViewBag.cnpjC                    <br />
+        </div>
+    </div>
+<div class="panel panel-primary col-md-6">
+    <div class=panel-heading>
+        <h3 class=panel-title>Consumo de Memoria</h3>
+    </div>
+    <div class=panel-body>
+        <div class="form-group form-inline col-md-12">
+            <label>Consumo de Memoria Atual</label>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="@ViewBag.memoria.MemoriaAtual" aria-valuemin="0" aria-valuemax="@ViewBag.memoria.MemoriaMaxima" style="width: @ViewBag.memoria.MemoriaAtualPercent">
+                    @ViewBag.memoria.MemoriaAtualString - @ViewBag.memoria.MemoriaAtualPercent
+                </div>
+            </div>
+            <label>Max: @ViewBag.memoria.MemoriaMaximaString</label>
+        </div>
+    </div>
+</div>
+
+    
+
+    
+
+
+
+<script src="~/JS/jquery-3.2.1.min.js"></script>
+        <script src="~/JS/datatables.min.js"></script>
+        <script src="~/JS/tether.min.js"></script>
+        <script src="~/JS/bootstrap.min.js"></script>
+        <script src="~/JS/Painel.js"></script>
+
+</body>
+</html>
