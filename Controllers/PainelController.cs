@@ -14,32 +14,39 @@ namespace MonitorRedis.Controllers
         public int CNPJ_A { get; set; }
         public int CNPJ_B { get; set; }
         public int CNPJ_C { get; set; }
+        public int MensagensTot { get; set; }
 
         // GET: Painel
         public ActionResult Index()
         {
-            CNPJ_A = CNPJ_B = CNPJ_C = 0;
+            CNPJ_A = CNPJ_B = CNPJ_C = MensagensTot = 0;
             memoria = new Memoria();
             string recebeJson;
-            string entregaJson;
+            string respostaJson;
             string memoriaJson;
+           
 
-            BuscaJson(out entregaJson, out recebeJson, out memoriaJson);
+            BuscaJson(out respostaJson, out recebeJson, out memoriaJson);
 
-            recebeJson = RemoveCaracteresIndesejados(recebeJson, entregaJson);
+            RemoveCaracteresIndesejados(ref recebeJson,ref respostaJson);
 
             memoriaJson = RemoveCaracteresIndesejadosMemoria(memoriaJson);
 
             PopulaVariavelMemoria(memoriaJson);
 
-            var split = recebeJson.Split(',');
+            var splitRecebe = recebeJson.Split(',');
+            var splitresposta = respostaJson.Split(',');
 
-            var fila = new List<Mensagens>();
+            var filaRecebe = new List<Mensagens>();
+            var filaresposta = new List<Mensagens>();
 
-            PopulaVariavel(split, fila);
+            PopulaVariavelRecebe(splitRecebe,ref filaRecebe);
+            PopulaVariavelresposta(splitresposta, ref filaresposta);
 
             ViewBag.memoria = memoria;
-            ViewBag.json = fila;
+            ViewBag.Recebe = filaRecebe;
+            ViewBag.resposta = filaresposta;
+            ViewBag.MensagensTot = MensagensTot;
             ViewBag.cnpjA = CNPJ_A;
             ViewBag.cnpjB = CNPJ_B;
             ViewBag.cnpjC = CNPJ_C;
@@ -65,7 +72,7 @@ namespace MonitorRedis.Controllers
             return memoriaJson;
         }
 
-        private void PopulaVariavel(string[] split, List<Mensagens> fila)
+        private void PopulaVariavelRecebe(string[] split,ref List<Mensagens> fila)
         {
             foreach (var t in split)
             {
@@ -84,12 +91,39 @@ namespace MonitorRedis.Controllers
                 {
                     CNPJ_C++;
                 }
+                MensagensTot += int.Parse(msg.Msg);
                 msg.CNPJ = temp[1];
                 fila.Add(msg);
             }
         }
 
-        private string RemoveCaracteresIndesejados(string recebe, string resposta)
+        private void PopulaVariavelresposta(string[] split,ref List<Mensagens> fila)
+        {
+            foreach (var t in split)
+            {
+                var msg = new Mensagens();
+                var temp = t.Split(':');
+                msg.Fila = temp[0];
+                msg.Msg = temp[2];
+                if (int.Parse(msg.Msg) > 2000)
+                {
+                    CNPJ_A++;
+                }
+                else if (int.Parse(msg.Msg) > 1000)
+                {
+                    CNPJ_B++;
+                }
+                else
+                {
+                    CNPJ_C++;
+                }
+                MensagensTot += int.Parse(msg.Msg);
+                msg.CNPJ = temp[1];
+                fila.Add(msg);
+            }
+        }
+
+        private void RemoveCaracteresIndesejados(ref string recebe,ref string resposta)
         {
             recebe = recebe.Replace("{", "");
             recebe = recebe.Replace("}", "");
@@ -97,16 +131,15 @@ namespace MonitorRedis.Controllers
             resposta = resposta.Replace("{", "");
             resposta = resposta.Replace("}", "");
             resposta = resposta.Replace('"', ' ');
-            recebe += "," + resposta;
-            return recebe;
+           
         }
 
         private void BuscaJson(out string resposta, out string recebe, out string memoria)
         { 
             using (var wc = new WebClient())
             {
-                recebe = wc.DownloadString(@"http://redis.oobj-dfe.com.br/respostasPorCnpj");
-                resposta = wc.DownloadString(@"http://redis.oobj-dfe.com.br/recebePorCnpj");
+                resposta = wc.DownloadString(@"http://redis.oobj-dfe.com.br/respostasPorCnpj");
+                recebe = wc.DownloadString(@"http://redis.oobj-dfe.com.br/recebePorCnpj");
                 memoria = wc.DownloadString(@"http://redis.oobj-dfe.com.br/memoriaDisponivel");
             }
             
