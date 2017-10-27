@@ -42,11 +42,8 @@ namespace MonitorRedis.Controllers
 
             PopulaVariavelRecebe(splitRecebe,ref filaRecebe);
             PopulaVariavelresposta(splitresposta, ref filaresposta);
-			var listaBaseRecebe = RetornaListaBase(filaRecebe);
-            var listaBaseResposta = RetornaListaBase(filaresposta);
+
             ViewBag.memoria = memoria;
-			ViewBag.baseRecebe = listaBaseRecebe;
-            ViewBag.baseResposta = listaBaseResposta;
             ViewBag.Recebe = filaRecebe;
             ViewBag.resposta = filaresposta;
             ViewBag.MensagensTot = MensagensTot;
@@ -146,39 +143,6 @@ namespace MonitorRedis.Controllers
                 memoria = wc.DownloadString(@"http://redis.oobj-dfe.com.br/memoriaDisponivel");
             }
             
-        }
-		
-		private List<Mensagens> RetornaListaBase(List<Mensagens> listaMensagens)
-        {
-            var listaBase = new List<Mensagens>();
-            var listaManobra = new List<Mensagens>();
-            listaManobra = listaMensagens;
-
-            foreach (var mensagem in listaManobra)
-            {
-                if (listaBase.Exists(x => x.CNPJ == mensagem.CNPJ.Substring(0, 8)))
-                {
-                    var msg = listaBase.Find(x => x.CNPJ == mensagem.CNPJ.Substring(0, 8));
-                    int count1 = int.Parse(msg.Msg);
-                    int count2 = int.Parse(mensagem.Msg);
-                    count1 += count2;
-                    msg.Msg = count1.ToString();
-                }
-                else
-                {
-                    var Fila = mensagem.Fila;
-                    var CNPJ = mensagem.CNPJ.Substring(0, 8);
-                    var MSg = mensagem.Msg;
-                    listaBase.Add(new Mensagens()
-                    {
-                        CNPJ = CNPJ,
-                        Msg = MSg,
-                        Fila = Fila
-                    });        
-                }
-            }
-
-            return listaBase;
         }
     }
 }

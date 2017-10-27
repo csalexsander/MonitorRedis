@@ -29,3 +29,35 @@ c:\users\alexsander\documents\visual studio 2015\Projects\MonitorRedis\MonitorRe
 c:\users\alexsander\documents\visual studio 2015\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Mvc.xml
 c:\users\alexsander\documents\visual studio 2015\Projects\MonitorRedis\MonitorRedis\obj\Debug\MonitorRedis.dll
 c:\users\alexsander\documents\visual studio 2015\Projects\MonitorRedis\MonitorRedis\obj\Debug\MonitorRedis.pdb
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\ApplicationInsights.config
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\MonitorRedis.dll.config
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\MonitorRedis.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\MonitorRedis.pdb
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.Web.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Helpers.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Mvc.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Razor.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Webpages.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Webpages.Razor.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.Web.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Razor.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Webpages.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Webpages.Razor.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Helpers.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\bin\System.Web.Mvc.xml
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\obj\Debug\MonitorRedis.csprojResolveAssemblyReference.cache
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\obj\Debug\MonitorRedis.dll
+C:\Users\Alexsander Camargo\Documents\Visual Studio 2017\Projects\MonitorRedis\MonitorRedis\obj\Debug\MonitorRedis.pdb
